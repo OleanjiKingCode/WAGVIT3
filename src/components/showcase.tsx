@@ -8,16 +8,14 @@ import Image from 'next/image';
 import { Input } from './ui/Input';
 import { useAccount, useSwitchChain } from 'wagmi';
 import { shortenAddress } from '@/utils/shoternAddress';
-import Select, { Option } from './ui/Select';
+// import Select, { Option } from './ui/Select';
 import { SwitchChain } from '@/utils/switchNetwork';
 import { toHex } from 'viem';
 
 export const Showcase = () => {
-  const { address } = useAccount();
+  const { address, chain } = useAccount();
   const { chains } = useSwitchChain();
-  console.log(chains);
-
-  const chainOptions: Option[] = chains.map((el) => ({
+  const chainOptions = chains.map((el) => ({
     label: el.name,
     value: String(el.id),
   }));
@@ -46,8 +44,20 @@ export const Showcase = () => {
           variant={Variant.Primary}
         />
       </div>
-
-      <Select options={chainOptions} onSelect={(value) => switchChain(value)} />
+      <div className=" flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5">
+        <h2 className="text-xl font-medium">Switch Chain </h2>
+        <select
+          className=" bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 cursor-pointer w-fit"
+          value={chain?.id}
+          onChange={(e) => switchChain(e.target.value)}
+        >
+          {chainOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+      </div>
 
       <h2 className="text-xl font-medium mt-10">Tag Samples</h2>
       <div className="flex gap-5 justify-between px-5 flex-wrap ">

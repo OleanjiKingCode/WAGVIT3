@@ -1,4 +1,4 @@
-import { connectorsForWallets } from "@rainbow-me/rainbowkit";
+import { connectorsForWallets } from '@rainbow-me/rainbowkit';
 import {
   metaMaskWallet,
   phantomWallet,
@@ -8,9 +8,9 @@ import {
   uniswapWallet,
   walletConnectWallet,
   zerionWallet,
-} from "@rainbow-me/rainbowkit/wallets";
-import { Chain } from "@rainbow-me/rainbowkit";
-import { createConfig } from "wagmi";
+} from '@rainbow-me/rainbowkit/wallets';
+import { Chain } from '@rainbow-me/rainbowkit';
+import { createConfig } from 'wagmi';
 import {
   arbitrum,
   arbitrumSepolia,
@@ -24,14 +24,14 @@ import {
   base,
   zora,
   optimism,
-} from "wagmi/chains";
+} from 'wagmi/chains';
 
-const Id = process.env.NEXT_PUBLIC_PROJECT_ID ?? "";
+const Id = process.env.NEXT_PUBLIC_PROJECT_ID ?? '';
 
 const connectors = connectorsForWallets(
   [
     {
-      groupName: "Recommended",
+      groupName: 'Recommended',
       wallets: [
         rainbowWallet,
         walletConnectWallet,
@@ -41,12 +41,12 @@ const connectors = connectorsForWallets(
       ],
     },
     {
-      groupName: "Others",
+      groupName: 'Others',
       wallets: [uniswapWallet, zerionWallet, talismanWallet],
     },
   ],
   {
-    appName: "wagmi-viem-tailwindcss-template",
+    appName: 'wagmi-viem-tailwindcss-template',
     projectId: Id,
   }
 );
