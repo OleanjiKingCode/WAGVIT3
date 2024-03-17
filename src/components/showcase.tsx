@@ -45,6 +45,7 @@ export const Showcase = () => {
   };
   return (
     <div className=" min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
+      
       <h2 className="text-xl font-medium">Ready Made Components</h2>
       <ConnectButton />
 
@@ -56,7 +57,7 @@ export const Showcase = () => {
           variant={Variant.Primary}
         />
       </div>
-      <div className=" flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
+      <div className="flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
         <h2 className="text-xl font-medium">Switch Chain </h2>
         <select
           className=" bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 cursor-pointer w-fit"
@@ -71,7 +72,7 @@ export const Showcase = () => {
         </select>
       </div>
 
-      <div className=" flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
+      <div className="flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
         <h2 className="text-xl font-medium">Sign Message </h2>
         <Input
           type="text"
@@ -155,6 +156,7 @@ export const Showcase = () => {
           }
         />
       </div>
+
     </div>
   );
 };

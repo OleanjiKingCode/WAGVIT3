@@ -1,40 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# wagmi-viem-tailwindcss Project Template
 
-## Getting Started
+This repository serves as a template for Web3 projects, providing a foundation for building decentralized applications using various libraries and tools. It includes a collection of reusable UI components and demonstrates implemented functionalities using the Wagmi library.
 
-First, run the development server:
+## Libraries Included
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Wagmi**: A library for interacting with Web3 and blockchain functionalities.
+- **Rainbow Kit**: A React library that makes it easy to add wallet connection to your dapp.
+- **Viem**: a TypeScript interface for Ethereum that provides low-level stateless primitives for interacting with Ethereum.
+- **Ethers.js**: A library for interacting with Ethereum.
+- **Prettier**: A code formatter to maintain code consistency.
+- **TypeScript**: A statically typed superset of JavaScript.
+- **Tailwind CSS**: A utility-first CSS framework for building custom designs.
+- **ESLint**: A tool for identifying and reporting patterns found in JavaScript code.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### UI Components and Samples
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Buttons**: Stylish buttons with various styles and sizes.
+- **Input**: Customized input fields for user interaction.
+- **Tags**: Colorful tags for labeling content.
+- **Cards**: Cards for organizing and displaying information.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Functionalities
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Shorten Address**: Functionality to shorten Ethereum addresses for better readability.
+- **Sign Message**: Ability to sign messages using Ethereum wallets.
+- **Switch Chain**: Option to switch between different Ethereum networks.
+- **Formatting Timestamp**: Formatting timestamps for better presentation.
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+To use this template for your Web3 project:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository.
+2. Install dependencies with `yarn install`.
+3. Start the development server with `yarn dev`.
+4. Begin building your decentralized application with the provided components and functionalities.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contributing
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is entirely open-source, and contributions are welcome. If you have ideas for improvements, features to add, or bug fixes, feel free to submit a pull request.
