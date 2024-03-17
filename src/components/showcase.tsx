@@ -4,12 +4,50 @@ import { Button } from './ui/Button';
 import { Variant } from '@/types/tagsTypes';
 import { Tag } from './ui/Tag';
 import Card from './ui/Card';
+import Image from 'next/image';
+import { Input } from './ui/Input';
+import { useAccount, useSwitchChain } from 'wagmi';
+import { shortenAddress } from '@/utils/shoternAddress';
+import Select, { Option } from './ui/Select';
+import { SwitchChain } from '@/utils/switchNetwork';
+import { toHex } from 'viem';
 
 export const Showcase = () => {
+  const { address } = useAccount();
+  const { chains } = useSwitchChain();
+  console.log(chains);
+
+  const chainOptions: Option[] = chains.map((el) => ({
+    label: el.name,
+    value: String(el.id),
+  }));
+
+  const switchChain = async (value: string) => {
+    let currentChain =
+      chains.find((entry) => entry.id === Number(value)) || chains[0];
+
+    await SwitchChain({
+      chainId: toHex(currentChain.id),
+      chainName: currentChain?.name,
+      rpcUrls: [...currentChain.rpcUrls.default.http],
+    });
+  };
+
   return (
     <div className=" min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
       <h2 className="text-xl font-medium">Ready Made Components</h2>
       <ConnectButton />
+
+      <div className="flex gap-1">
+        Shorten User Address:{' '}
+        <Tag
+          text={shortenAddress(address)}
+          isDefault
+          variant={Variant.Primary}
+        />
+      </div>
+
+      <Select options={chainOptions} onSelect={(value) => switchChain(value)} />
 
       <h2 className="text-xl font-medium mt-10">Tag Samples</h2>
       <div className="flex gap-5 justify-between px-5 flex-wrap ">
@@ -32,6 +70,12 @@ export const Showcase = () => {
         <Button text="Loading Button" isDefault isLoading />
       </div>
 
+      <h2 className="text-xl font-medium mt-10">Input Samples</h2>
+      <div className="flex flex-row gap-5 justify-between px-5 flex-wrap ">
+        <Input type="text" placeholder="This is a text" />
+        <Input type="number" placeholder="300" />
+      </div>
+
       <h2 className="text-xl font-medium mt-10">Card Samples</h2>
       <div className="flex gap-5 justify-between px-5 flex-wrap ">
         <Card
@@ -48,24 +92,27 @@ export const Showcase = () => {
           headerText="Nft Card"
           body={
             <div className="flex flex-col gap-2">
-              <img
-                src="path/to/image.png"
+              <Image
+                src="/boredape.jpg"
                 alt="NFT Image"
-                className="w-full h-auto mb-4"
+                width={200}
+                height={200}
+                className="w-full h-auto mb-4 rounded-lg"
               />
               <div className="flex justify-between items-center">
                 <strong>Milady Maker</strong>
-                <Tag text="@rare" isDefault variant={Variant.Success} />
+                <Tag text="123 ETH" isDefault variant={Variant.Secondary} />
               </div>
               <div>
-                This is a custom NFT card featuring a unique digital asset.
+                This is a custom NFT card featuring a unique <br /> digital
+                asset.
               </div>
             </div>
           }
           footer={
             <div className="flex w-full gap-5 justify-between flex-wrap ">
-              <Button text="BUY" isDefault variant={Variant.Primary} />
-              <Button text="SELL" isDefault variant={Variant.Secondary} />
+              <Button text="BUY NFT" isDefault variant={Variant.Primary} />
+              <Button text="SELL NFT" isDefault variant={Variant.Secondary} />
             </div>
           }
         />

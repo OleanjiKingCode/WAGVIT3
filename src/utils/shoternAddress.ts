@@ -1,9 +1,9 @@
-export const shortenAddress = (
-  account: string,
-  firstTakeLength = 5,
-  secondTakeLength = 4
-) => {
-  const partOne = account.substring(0, firstTakeLength);
-  const partTwo = account.substring(account.length - secondTakeLength);
-  return `${partOne}...${partTwo}`;
+export const shortenAddress = (address?: string): string => {
+  if (!address || !address.startsWith('0x')) {
+    return address ?? '-';
+  }
+  const prefixLength = 6;
+  const suffixLength = 4;
+  const truncatedAddress = `${address.slice(0, prefixLength)}…${address.slice(-suffixLength)}`;
+  return truncatedAddress;
 };

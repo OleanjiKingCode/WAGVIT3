@@ -3,7 +3,10 @@ import { ButtonProps } from '@/types/buttonTypes';
 import { Variant } from '@/types/tagsTypes';
 import React from 'react';
 
-export const Button: React.FC<ButtonProps> = ({
+export const Button: React.ForwardRefRenderFunction<
+  HTMLButtonElement,
+  ButtonProps
+> = ({
   text,
   onClick,
   variant = Variant.Primary, //Default Variant
@@ -12,6 +15,7 @@ export const Button: React.FC<ButtonProps> = ({
   iconSize = '20px', // Default icon size
   size = 'default', // Default size
   className = '',
+  ...props
 }) => {
   let variantStyling = '';
 
@@ -20,7 +24,7 @@ export const Button: React.FC<ButtonProps> = ({
       variantStyling = 'bg-gray-200 text-gray-800';
       break;
     case Variant.Warning:
-      variantStyling = 'bg-yellow-500 text-white';
+      variantStyling = 'bg-orange-500 text-white';
       break;
     case Variant.Danger:
       variantStyling = 'bg-red-500 text-white';
@@ -49,6 +53,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={`${variantStyling} ${sizeStyling[size]} ${defaultStyling} ${className} `}
       onClick={onClick}
       disabled={isLoading}
+      {...props}
     >
       {isLoading && <LoadingIcon size={iconSize} />}
       <span className={`${isLoading && 'ml-2'}`}>{text}</span>
