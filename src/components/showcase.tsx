@@ -1,19 +1,21 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
-import React from 'react';
-import { Button } from './ui/Button';
+import React, { useState } from 'react';
 import { Variant } from '@/types/tagsTypes';
-import { Tag } from './ui/Tag';
+import Tag from './ui/Tag';
 import Card from './ui/Card';
 import Image from 'next/image';
+import Button from './ui/Button';
 import { Input } from './ui/Input';
 import { useAccount, useSwitchChain } from 'wagmi';
 import { shortenAddress } from '@/utils/shoternAddress';
-// import Select, { Option } from './ui/Select';
 import { SwitchChain } from '@/utils/switchNetwork';
 import { toHex } from 'viem';
+import { SignMessage } from '@/utils/signMessage';
 
 export const Showcase = () => {
   const { address, chain } = useAccount();
+  const [loading, setloading] = useState(false);
+  const [signMsg, setsignMsg] = useState('Default Mesage');
   const { chains } = useSwitchChain();
   const chainOptions = chains.map((el) => ({
     label: el.name,
@@ -31,6 +33,16 @@ export const Showcase = () => {
     });
   };
 
+  const Sign = async (msg: string) => {
+    try {
+      setloading(true);
+      await SignMessage({ msg: msg });
+      setloading(false);
+    } catch (error) {
+      console.log(error);
+      setloading(false);
+    }
+  };
   return (
     <div className=" min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
       <h2 className="text-xl font-medium">Ready Made Components</h2>
@@ -44,7 +56,7 @@ export const Showcase = () => {
           variant={Variant.Primary}
         />
       </div>
-      <div className=" flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5">
+      <div className=" flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
         <h2 className="text-xl font-medium">Switch Chain </h2>
         <select
           className=" bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 cursor-pointer w-fit"
@@ -57,6 +69,22 @@ export const Showcase = () => {
             </option>
           ))}
         </select>
+      </div>
+
+      <div className=" flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
+        <h2 className="text-xl font-medium">Sign Message </h2>
+        <Input
+          type="text"
+          placeholder="This is a text"
+          value={signMsg}
+          onChange={(e) => setsignMsg(e.target.value)}
+        />
+        <Button
+          text="Sign Message"
+          isDefault
+          isLoading={loading}
+          onClick={() => Sign(signMsg)}
+        />
       </div>
 
       <h2 className="text-xl font-medium mt-10">Tag Samples</h2>

@@ -1,7 +1,7 @@
 import { TagProps, Variant } from '@/types/tagsTypes';
 import React from 'react';
 
-export const Tag: React.FC<TagProps> = ({
+const Tag: React.FC<TagProps> = ({
   text,
   variant = Variant.Primary,
   isDefault = false,
@@ -37,3 +37,5 @@ export const Tag: React.FC<TagProps> = ({
     </div>
   );
 };
+
+export default Tag;

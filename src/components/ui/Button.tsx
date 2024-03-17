@@ -3,7 +3,7 @@ import { ButtonProps } from '@/types/buttonTypes';
 import { Variant } from '@/types/tagsTypes';
 import React from 'react';
 
-export const Button: React.ForwardRefRenderFunction<
+const Button: React.ForwardRefRenderFunction<
   HTMLButtonElement,
   ButtonProps
 > = ({
@@ -60,3 +60,5 @@ export const Button: React.ForwardRefRenderFunction<
     </button>
   );
 };
+
+export default Button;

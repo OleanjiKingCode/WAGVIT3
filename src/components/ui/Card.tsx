@@ -1,10 +1,5 @@
+import { CardProps } from '@/types/cardTypes';
 import React from 'react';
-
-interface CardProps {
-  headerText?: string | React.ReactNode;
-  body: React.ReactNode;
-  footer?: React.ReactNode;
-}
 
 const Card = ({ headerText, body, footer }: CardProps) => (
   <div className="bg-white rounded-lg shadow-md h-fit">
