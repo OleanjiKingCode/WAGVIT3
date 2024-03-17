@@ -41,3 +41,7 @@ To use this template for your Web3 project:
 ## Contributing
 
 This project is entirely open-source, and contributions are welcome. If you have ideas for improvements, features to add, or bug fixes, feel free to submit a pull request.
+
+## Author
+
+- **Oleanji**
