@@ -5,7 +5,7 @@ import Tag from './ui/Tag';
 import Card from './ui/Card';
 import Image from 'next/image';
 import Button from './ui/Button';
-import { Input } from './ui/Input';
+import Input from './ui/Input';
 import { useAccount, useSwitchChain } from 'wagmi';
 import { shortenAddress } from '@/utils/shoternAddress';
 import { SwitchChain } from '@/utils/switchNetwork';
@@ -45,7 +45,6 @@ export const Showcase = () => {
   };
   return (
     <div className=" min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
-      
       <h2 className="text-xl font-medium">Ready Made Components</h2>
       <ConnectButton />
 
@@ -156,7 +155,6 @@ export const Showcase = () => {
           }
         />
       </div>
-
     </div>
   );
 };
