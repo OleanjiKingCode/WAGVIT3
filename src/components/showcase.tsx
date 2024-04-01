@@ -87,6 +87,9 @@ export const Showcase = () => {
         />
       </div>
 
+      <h2 className="text-xl font-medium mt-10">Toast Samples</h2>
+      <div className="flex gap-5 justify-between px-5 flex-wrap "></div>
+
       <h2 className="text-xl font-medium mt-10">Tag Samples</h2>
       <div className="flex gap-5 justify-between px-5 flex-wrap ">
         <Tag text="Default Tag" isDefault />
