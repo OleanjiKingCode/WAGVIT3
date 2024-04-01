@@ -1,6 +1,6 @@
 ![image](https://github.com/OleanjiKingCode/wagmi-viem-tailwindcss-template/assets/75235148/37e9e142-33e6-4f3b-b51d-2a99f9bb011e)
 
-# wagmi-viem-tailwindcss Project Template
+# WAGVIT -> WAgmi VIem Tailwindcss Project Template
 
 This repository serves as a template for Web3 projects, providing a foundation for building decentralized applications using various libraries and tools. It includes a collection of reusable UI components and demonstrates implemented functionalities using the Wagmi library.
 
