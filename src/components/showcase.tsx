@@ -11,6 +11,8 @@ import { shortenAddress } from '@/utils/shoternAddress';
 import { SwitchChain } from '@/utils/switchNetwork';
 import { toHex } from 'viem';
 import { SignMessage } from '@/utils/signMessage';
+import { toast } from 'react-toastify';
+import { toastOptions } from './ui/Toast';
 
 export const Showcase = () => {
   const { address, chain } = useAccount();
@@ -43,6 +45,26 @@ export const Showcase = () => {
       setloading(false);
     }
   };
+
+  const showToast = (text: string, type: string) => {
+    switch (type) {
+      case 'success':
+        toast.success(text, { ...toastOptions });
+        break;
+      case 'info':
+        toast.info(text, { ...toastOptions });
+        break;
+      case 'error':
+        toast.error(text, { ...toastOptions });
+        break;
+      case 'warn':
+        toast.warn(text, { ...toastOptions });
+        break;
+      default:
+        toast(text, { ...toastOptions });
+    }
+  };
+
   return (
     <div className=" min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
       <h2 className="text-xl font-medium">Ready Made Components</h2>
@@ -88,7 +110,38 @@ export const Showcase = () => {
       </div>
 
       <h2 className="text-xl font-medium mt-10">Toast Samples</h2>
-      <div className="flex gap-5 justify-between px-5 flex-wrap "></div>
+      <div className="flex gap-5 justify-between px-5 flex-wrap ">
+        <Button
+          text="Trigger Default Toast"
+          isDefault
+          onClick={() => showToast('Fair', '')}
+        />
+        <Button
+          text="Trigger Success Toast"
+          isDefault
+          variant={Variant.Success}
+          onClick={() => showToast('Excellent', 'success')}
+        />
+        <Button
+          text="Trigger Info Toast"
+          isDefault
+          variant={Variant.Secondary}
+          onClick={() => showToast('Okay', 'info')}
+        />
+
+        <Button
+          text="Trigger Warning Toast"
+          isDefault
+          variant={Variant.Warning}
+          onClick={() => showToast('Caution', 'warn')}
+        />
+        <Button
+          text="Trigger Error Toast"
+          isDefault
+          variant={Variant.Danger}
+          onClick={() => showToast('Bad', 'error')}
+        />
+      </div>
 
       <h2 className="text-xl font-medium mt-10">Tag Samples</h2>
       <div className="flex gap-5 justify-between px-5 flex-wrap ">
