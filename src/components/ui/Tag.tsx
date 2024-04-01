@@ -11,20 +11,20 @@ const Tag: React.FC<TagProps> = ({
 
   switch (variant) {
     case Variant.Secondary:
-      variantStyling = 'bg-gray-200 text-gray-800';
+      variantStyling = 'bg-[#6B7280] text-[#1F2937]';
       break;
     case Variant.Warning:
-      variantStyling = 'bg-orange-200 text-orange-500 ';
+      variantStyling = 'bg-[#F97316] text-[#fff]';
       break;
     case Variant.Danger:
-      variantStyling = 'bg-red-200 text-red-500 ';
+      variantStyling = 'bg-[#EF4444] text-[#fff]';
       break;
     case Variant.Success:
-      variantStyling = 'bg-green-200 text-green-500';
+      variantStyling = 'bg-[#25C55E] text-[#fff]';
       break;
     case Variant.Primary:
     default:
-      variantStyling = 'bg-blue-200 text-blue-500';
+      variantStyling = 'bg-[#3B82F6] text-[#fff]';
       break;
   }
 
