@@ -21,20 +21,20 @@ const Button: React.ForwardRefRenderFunction<
 
   switch (variant) {
     case Variant.Secondary:
-      variantStyling = 'bg-gray-200 text-gray-800';
+      variantStyling = 'bg-[#6B7280] text-[#1F2937]';
       break;
     case Variant.Warning:
-      variantStyling = 'bg-orange-500 text-white';
+      variantStyling = 'bg-[#F97316] text-[#fff]';
       break;
     case Variant.Danger:
-      variantStyling = 'bg-red-500 text-white';
+      variantStyling = 'bg-[#EF4444] text-[#fff]';
       break;
     case Variant.Success:
-      variantStyling = 'bg-green-500 text-white';
+      variantStyling = 'bg-[#25C55E] text-[#fff]';
       break;
     case Variant.Primary:
     default:
-      variantStyling = 'bg-blue-500 text-white';
+      variantStyling = 'bg-[#3B82F6] text-[#fff]';
       break;
   }
 
@@ -50,7 +50,7 @@ const Button: React.ForwardRefRenderFunction<
 
   return (
     <button
-      className={`${variantStyling} ${sizeStyling[size]} ${defaultStyling} ${className} `}
+      className={`${variantStyling} ${sizeStyling[size]} ${defaultStyling} ${className}`}
       onClick={onClick}
       disabled={isLoading}
       {...props}

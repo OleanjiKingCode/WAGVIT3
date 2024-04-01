@@ -99,7 +99,7 @@ export const Showcase = () => {
 
       <h2 className="text-xl font-medium mt-10">Button Samples</h2>
       <div className="flex gap-5 justify-between px-5 flex-wrap ">
-        <Button text="Default Button" isDefault />
+        <Button text="Default Button" isDefault className="bg-pink-400" />
         <Button text="Success Button" isDefault variant={Variant.Success} />
         <Button text="Primary Button" isDefault variant={Variant.Primary} />
         <Button text="Secondary Button" isDefault variant={Variant.Secondary} />
