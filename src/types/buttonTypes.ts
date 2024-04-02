@@ -10,4 +10,5 @@ export interface ButtonProps
   className?: string;
   iconSize?: string;
   size?: 'default' | 'sm' | 'lg';
+  icon?: JSX.Element;
 }

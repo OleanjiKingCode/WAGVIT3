@@ -15,6 +15,7 @@ const Button: React.ForwardRefRenderFunction<
   iconSize = '20px', // Default icon size
   size = 'default', // Default size
   className = '',
+  icon,
   ...props
 }) => {
   let variantStyling = '';
@@ -55,8 +56,8 @@ const Button: React.ForwardRefRenderFunction<
       disabled={isLoading}
       {...props}
     >
-      {isLoading && <LoadingIcon size={iconSize} />}
-      <span className={`${isLoading && 'ml-2'}`}>{text}</span>
+      {isLoading ? <LoadingIcon size={iconSize} /> : icon}
+      <span className={`${(isLoading || icon) && 'ml-2'}`}>{text}</span>
     </button>
   );
 };

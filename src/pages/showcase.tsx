@@ -66,7 +66,7 @@ const Showcase = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
+    <div className="min-h-screen w-full bg-[#0f172a] text-white flex flex-col items-center py-10 gap-5">
       <h2 className="text-xl font-medium">Ready Made Components</h2>
       <ConnectButton />
 
@@ -171,7 +171,7 @@ const Showcase = () => {
       </div>
 
       <h2 className="text-xl font-medium mt-10">Card Samples</h2>
-      <div className="flex gap-5 justify-between px-5 flex-wrap ">
+      <div className="flex gap-5 justify-between px-5 flex-wrap text-black">
         <Card
           headerText="Normal Card"
           body={<p>This is the body of my card.</p>}
