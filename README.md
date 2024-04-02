@@ -1,4 +1,4 @@
-![image](https://github.com/OleanjiKingCode/wagmi-viem-tailwindcss-template/assets/75235148/37e9e142-33e6-4f3b-b51d-2a99f9bb011e)
+![screencapture-localhost-3000-2024-04-02-14_57_59](https://github.com/OleanjiKingCode/WAGVIT3/assets/75235148/c1325383-8bd7-418f-87b0-7853560b7ea3)
 
 # WAGVIT -> WAgmi VIem Tailwindcss Project Template
 
@@ -16,6 +16,7 @@ This repository serves as a template for Web3 projects, providing a foundation f
 - **ESLint**: A tool for identifying and reporting patterns found in JavaScript code.
 
 ## Features
+![screencapture-localhost-3000-showcase-2024-04-02-14_59_15](https://github.com/OleanjiKingCode/WAGVIT3/assets/75235148/eb63abd4-62b3-41b1-a291-cba238e8852d)
 
 ### UI Components and Samples
 
