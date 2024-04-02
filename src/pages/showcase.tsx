@@ -1,20 +1,20 @@
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import React, { useState } from 'react';
 import { Variant } from '@/types/tagsTypes';
-import Tag from './ui/Tag';
-import Card from './ui/Card';
+import Tag from '../components/ui/Tag';
+import Card from '../components/ui/Card';
 import Image from 'next/image';
-import Button from './ui/Button';
-import Input from './ui/Input';
+import Button from '../components/ui/Button';
+import Input from '../components/ui/Input';
 import { useAccount, useSwitchChain } from 'wagmi';
 import { shortenAddress } from '@/utils/shoternAddress';
 import { SwitchChain } from '@/utils/switchNetwork';
 import { toHex } from 'viem';
 import { SignMessage } from '@/utils/signMessage';
 import { toast } from 'react-toastify';
-import { toastOptions } from './ui/Toast';
+import { toastOptions } from '../components/ui/Toast';
 
-export const Showcase = () => {
+const Showcase = () => {
   const { address, chain } = useAccount();
   const [loading, setloading] = useState(false);
   const [signMsg, setsignMsg] = useState('Default Mesage');
@@ -66,7 +66,7 @@ export const Showcase = () => {
   };
 
   return (
-    <div className=" min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
+    <div className="min-h-screen w-full bg-pink-100 flex flex-col items-center py-10 gap-5">
       <h2 className="text-xl font-medium">Ready Made Components</h2>
       <ConnectButton />
 
@@ -214,3 +214,5 @@ export const Showcase = () => {
     </div>
   );
 };
+
+export default Showcase;
