@@ -81,7 +81,7 @@ const Showcase = () => {
       <div className="flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
         <h2 className="text-xl font-medium">Switch Chain </h2>
         <select
-          className=" bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 cursor-pointer w-fit"
+          className=" bg-white border border-gray-300 rounded-md px-4 py-2 pr-8 cursor-pointer w-fit text-black"
           value={chain?.id}
           onChange={(e) => switchChain(e.target.value)}
         >
@@ -93,8 +93,8 @@ const Showcase = () => {
         </select>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10">
-        <h2 className="text-xl font-medium">Sign Message </h2>
+      <div className="flex flex-col md:flex-row items-center gap-5 w-full justify-center px-5 mt-10 text-black">
+        <h2 className="text-xl font-medium text-white">Sign Message </h2>
         <Input
           type="text"
           placeholder="This is a text"
@@ -165,7 +165,7 @@ const Showcase = () => {
       </div>
 
       <h2 className="text-xl font-medium mt-10">Input Samples</h2>
-      <div className="flex flex-row gap-5 justify-between px-5 flex-wrap ">
+      <div className="flex flex-row gap-5 justify-between px-5 flex-wrap text-black ">
         <Input type="text" placeholder="This is a text" />
         <Input type="number" placeholder="300" />
       </div>

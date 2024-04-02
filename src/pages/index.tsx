@@ -1,6 +1,7 @@
 import Button from '@/components/ui/Button';
 import Tag from '@/components/ui/Tag';
 import { Variant } from '@/types/tagsTypes';
+import Link from 'next/link';
 import { RiEye2Line, RiGithubFill } from 'react-icons/ri';
 
 export default function Home() {
@@ -28,13 +29,17 @@ export default function Home() {
         <Tag text="ETHERS" isDefault variant={Variant.Danger} />
       </div>
       <div className="flex flex-wrap gap-5 items-center">
-        <Button
-          text="View Components"
-          isDefault
-          icon={<RiEye2Line />}
-          className="bg-emerald-400 hover:bg-emerald-700 bg-"
-        />
-        <Button text="Contribute" isDefault icon={<RiGithubFill />} />
+        <Link href="/showcase">
+          <Button
+            text="View Components"
+            isDefault
+            icon={<RiEye2Line />}
+            className="bg-emerald-400 hover:bg-emerald-700 bg-"
+          />
+        </Link>
+        <Link href="https://github.com/OleanjiKingCode/WAGVIT3" target="_blank">
+          <Button text="Contribute" isDefault icon={<RiGithubFill />} />
+        </Link>
       </div>
     </div>
   );
